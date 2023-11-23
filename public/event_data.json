@@ -1,0 +1,202 @@
+[
+    {
+        "id": 1,
+        "name": "Mastering SEO Strategies",
+        "location": {
+            "buildings": "TechHub Plaza Conference Center",
+            "city": "New York City"
+        },
+        "date_and_time": {
+            "date": "Friday, 22 December 2023",
+            "time": "09:00 AM"
+        },
+        "details": "Mastering SEO Strategies is a comprehensive journey through the intricacies of Search Engine Optimization. It delves into the art and science of enhancing website visibility, covering keyword research, content optimization, link building, and technical SEO. This guide empowers marketers and businesses with actionable insights to navigate search engine algorithms effectively, driving organic traffic and achieving higher rankings. It combines theory with practical techniques, offering a roadmap for creating sustainable, impactful SEO strategies in the dynamic digital landscape.",
+        "price": 299.99,
+        "event_img": "https://i.ibb.co/4VShXt7/event1.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 2,
+        "name": "Social Media Marketing Summit",
+        "location": {
+            "buildings": "Downtown Convention Center",
+            "city": "Los Angeles"
+        },
+        "date_and_time": {
+            "date": "Saturday, 13 January 2024",
+            "time": "10:30 AM"
+        },
+        "details": "Join industry experts discussing the latest trends and best practices in social media marketing.",
+        "price": 249.50,
+        "event_img": "https://i.ibb.co/3z6yY6h/event2.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 3,
+        "name": "Email Marketing Workshop",
+        "location": {
+            "buildings": "Marketing Institute Hall",
+            "city": "Chicago"
+        },
+        "date_and_time": {
+            "date": "Saturday, 17 February 2024",
+            "time": "11:00 AM"
+        },
+        "details": "Hands-on workshop focusing on creating effective email marketing campaigns for businesses.",
+        "price": 199.00,
+        "event_img": "https://i.ibb.co/D5fqkw7/event3.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 4,
+        "name": "Content Marketing Conference",
+        "location": {
+            "buildings": "Content Creator Center",
+            "city": "San Francisco"
+        },
+        "date_and_time": {
+            "date": "Sunday, 10 March 2024",
+            "time": "01:00 PM"
+        },
+        "details": "Learn how to craft compelling content strategies that resonate with your target audience.",
+        "price": 349.75,
+        "event_img": "https://i.ibb.co/pxWqLbb/event4.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 5,
+        "name": "Digital Advertising Bootcamp",
+        "location": {
+            "buildings": "AdTech Tower, Digital Marketers Plaza",
+            "city": "Miami"
+        },
+        "date_and_time": {
+            "date": "Sunday, 24 March 2024",
+            "time": "09:30 AM"
+        },
+        "details": "Intensive training on leveraging digital advertising platforms for maximum ROI.",
+        "price": 279.00,
+        "event_img": "https://i.ibb.co/tzzk7QD/event5.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    },
+    {
+        "id": 6,
+        "name": "Analytics and Data-driven Marketing Forum",
+        "location": {
+            "buildings": "Analytics Summit Hall",
+            "city": "Seattle"
+        },
+        "date_and_time": {
+            "date": "Saturday, 6 April 2024",
+            "time": "09:00 PM"
+        },
+        "details": "Explore the power of data-driven marketing and analytics for informed decision-making.",
+        "price": 199.99,
+        "event_img": "https://i.ibb.co/yqR5PWb/event6.jpg",
+        "speakers": [
+            {
+                "name": "David Johnson",
+                "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg"
+            },
+            {
+                "name": "Olivia Lee",
+                "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg"
+            },
+            {
+                "name": "Daniel Wilson",
+                "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg"
+            },
+            {
+                "name": "Sophie Roberts",
+                "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg"
+            }
+        ]
+    }
+    
+    
+]

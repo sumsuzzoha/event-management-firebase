@@ -8,7 +8,7 @@ const HomeBanner = () => {
             className='min-h-max w-full rounded-lg mb-10'>
 
             <div className="min-h-max bg-gradient-to-t from-zinc-800 rounded-lg">
-                <div className='p-6'>
+                <div className=''>
                     <Navbar></Navbar>
                 </div>
 

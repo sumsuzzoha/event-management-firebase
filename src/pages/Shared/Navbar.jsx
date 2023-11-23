@@ -1,16 +1,31 @@
-import { NavLink } from "react-router-dom";
+import { useContext } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { AuthContext } from "../../provider/AuthProvider";
 
 const Navbar = () => {
 
-    const links =<>
-    <li><NavLink to='/'>Home</NavLink></li>
-    <li><NavLink to='/about'>About</NavLink></li>
-    <li><NavLink to='/blog'>Blog</NavLink></li>
-    <li><NavLink to='/contact'>Contact</NavLink></li>
+    const { user, signOutUser } = useContext(AuthContext);
+    // console.log(user);
+
+    const links = <>
+        <li><NavLink to='/'>Home</NavLink></li>
+        <li><NavLink to='/events'>Events</NavLink></li>
+        <li><NavLink to='/about'>About</NavLink></li>
+        <li><NavLink to='/blog'>Blog</NavLink></li>
+        <li><NavLink to='/contact'>Contact</NavLink></li>
     </>
+
+    const handleSignOut = () => {
+        signOutUser()
+            .then(() => { console.log('Sing Out Successfull') })
+            .catch(error => {
+                console.log(error.message)
+            })
+    }
+
     return (
         <div>
-            <div className="navbar ">
+            <div className="navbar p-6">
                 <div className="navbar-start">
                     <div className="dropdown">
                         <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -27,13 +42,35 @@ const Navbar = () => {
                 </div>
                 <div className="navbar-center hidden lg:flex">
                     <ul className="menu menu-horizontal px-1">
-                       {
-                        links
-                       }
+                        {
+                            links
+                        }
                     </ul>
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <div className=" dropdown dropdown-end ">
+                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                            <div className="w-10 rounded-full">
+                                <img className="bg-slate-200" alt="Tailwind CSS Navbar component" src={user?.photoURL} />
+                            </div>
+                        </label>
+                        <ul tabIndex={0} className={`mt-3 z-[1] p-2 shadow menu menu-sm dropdown-content bg-base-100 rounded-box w-52`}>
+                            <li className={`${user ? "" : "hidden"}`}>
+                            {user && <>{user.email}</>}
+                            </li>
+                            <li className={`${user ? "" : "hidden"}`}>
+                            {user && <>{user.displayName}</>}
+                            </li>
+                           
+                            <li>{user ? <><span onClick={handleSignOut} >Logout</span>
+                            </> : <><Link to="/login"><span>Login</span></Link>
+
+                            </>}
+
+
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
