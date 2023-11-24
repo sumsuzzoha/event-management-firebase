@@ -1,11 +1,14 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../utilitis/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
 
+    const [regInputError, setRegInputError] = useState();
     const [regError, setRegError] = useState();
+    const [success, setSuccess] = useState('');
     const [showpassword, setShowPassword] = useState(false);
 
     const handleRegisterForm = e => {
@@ -14,21 +17,22 @@ const Register = () => {
         // const userLogInName = form.get('name')
         const userRegEmail = form.get('email')
         const userRegPassword = form.get('password')
-        const userRegRePassword = form.get('re_password')
         console.log(userRegEmail, userRegPassword)
         setRegError('');
 
-        if (userRegPassword !== userRegRePassword) {
-            setRegError('Your Password is not matched. Try Again');
+        if (userRegPassword < 6) {
+            setRegInputError('Your Password should be minimum 6 charecter');
             return;
         }
-
         createUser(userRegEmail, userRegPassword)
-            .then(result => {
-                console.log(result)
+            .then(() => {
+                setSuccess('Account create Successfully')
+                // console.log(result)
                 // const user = userCredential.user;
             })
             .catch((error) => {
+                setRegError(error.message)
+                toast("Wow so easy!")
                 console.log(error.code)
                 // const errorCode = error.code;
 
@@ -58,17 +62,6 @@ const Register = () => {
                                 </label>
                                 <input type={showpassword ? 'text' : "password"} name='password' placeholder="password" className="input input-bordered" required />
                             </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text-alt">
-                                        {regError ? <p>{regError}</p> : <p>{setRegError('Enter Password again')}</p>}
-                                    </span>
-
-
-                                </label>
-                                <input type={showpassword ? 'text' : "password"} name='re_password' placeholder="re-password" className="input input-bordered" required />
-                            </div>
-
                             <label className="label label-text-alt">
                                 <span><input onClick={() => setShowPassword(!showpassword)} type="checkbox" name="" id="1" /> Show Password</span>
                             </label>
@@ -77,6 +70,17 @@ const Register = () => {
                             <label className="label">
                                 <span><input type="checkbox" name="" id="2" /> Accept the Terms & Condition</span>
                             </label>
+                        </div>
+                        <div>
+                            {
+                                regInputError && <p className="text-green-400 text-lg font-semibold text-center">{regError}</p>
+                            }
+                            {
+                                regError && <p className="text-green-400 text-lg font-semibold text-center">{regError}</p>
+                            }
+                            {
+                                success && <p className="text-green-400 text-lg font-semibold text-center">{success}</p>
+                            }
                         </div>
                         <div className="form-control mt-6">
                             <input type="submit" value="Register" className="btn btn-primary" />
@@ -90,7 +94,7 @@ const Register = () => {
 
             </div>
 
-            {/* <ToastContainer></ToastContainer> */}
+            <ToastContainer />
         </div>
     );
 };

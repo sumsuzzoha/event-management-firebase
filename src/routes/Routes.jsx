@@ -27,7 +27,9 @@ const router = createBrowserRouter([
             },
             {
                 path: '/event/:id',
-                element: <EventDetail></EventDetail>,
+                element: <PrivateRoute>
+                    <EventDetail></EventDetail>
+                </PrivateRoute>,
                 loader: () => fetch('/event_data.json')
             },
             {
@@ -35,14 +37,14 @@ const router = createBrowserRouter([
                 element: <PrivateRoute>
                     <BookedEvent></BookedEvent>
                 </PrivateRoute>,
-                loader:() => fetch('/event_data.json')
+                loader: () => fetch('/event_data.json')
             },
             {
                 path: '/speakers',
                 element: <PrivateRoute>
                     <Speakers></Speakers>
                 </PrivateRoute>,
-                loader:() => fetch('/event_data.json')
+                loader: () => fetch('/event_data.json')
             },
             // {
             //     path: '/enroled/:id',
