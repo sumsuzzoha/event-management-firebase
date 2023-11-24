@@ -1,9 +1,11 @@
-import HomeBanner from "../Shared/Banner/HomeBanner";
+import About from "../About/About";
+import Events from "../Events/Events";
 
 const Home = () => {
     return (
         <div>
-            <HomeBanner></HomeBanner>
+            <About></About>
+            <Events></Events>
         </div>
     );
 };

@@ -1,7 +1,7 @@
-import aboutImg from '.././../assets/aboutImg2.png'
+import aboutImg2 from '../../assets/images/aboutImg2.png'
 const About = () => {
     return (
-        <div className='md:space-y-6'>
+        <div className='md:space-y-6 py-6'>
             <div className="grid md:grid-cols-2 md:gap-10 md:mx-20 " >
                 <div className=' grid content-center space-y-6 mt-6 mx-6 md:pr-6 '>
                     <h2 className='text-xl font-bold text-slate-400'>ABOUT DigiSESSION</h2>
@@ -9,7 +9,7 @@ const About = () => {
                     <p>The bustling business seminar gathered industry leaders, fostering innovation and collaboration. Expert panels unveiled trends, strategies, and insights, igniting dialogue among participants. Networking thrived as minds converged, exchanging ideas that sparked newfound opportunities. It was a melting pot of visionaries, shaping the future of commerce in a dynamic, electrifying atmosphere.</p>
                     <button className='btn btn-primary w-max'>Read More</button>
                 </div>
-                <img className='max-h-fit rounded-xl' src={aboutImg} alt="" />
+                <img className='max-h-fit rounded-xl' src={aboutImg2} alt="" />
 
             </div>
             <div className="grid md:grid-cols-2 md:gap-10 md:mx-20 md:pt-10">
@@ -34,14 +34,14 @@ const About = () => {
                 </div>
 
             </div>
-            <div className='flex justify-around bg-base-100 shadow rounded mx-4 p-6'>
+            <div className='flex justify-around bg-base-100 shadow-xl rounded mx-4 p-6'>
                 <h2 className='text-3xl font-bold '>45K<span className='text-red-500'>+</span><span className='text-xl'>ATTENDEES</span></h2>
                 <h2 className='text-3xl font-bold '>25<span className='text-red-500'>+</span><span className='text-xl'>SPEAKERS</span></h2>
                 <h2 className='text-3xl font-bold '>50<span className='text-red-500'>+</span><span className='text-xl'>SESSIONS</span></h2>
                 <h2 className='text-3xl font-bold '>35<span className='text-red-500'>+</span><span className='text-xl'>PARTICIPANS</span></h2>
             </div>
 
-           
+
 
         </div>
     );
