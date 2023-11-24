@@ -1,0 +1,66 @@
+[
+    {
+        "id": 1,
+        "name": "David Johnson",
+        "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg",
+        "expertise": "Digital Marketing",
+        "designation": "Founder",
+        "company": "ABC Marketing Solutions"
+    },
+    {
+        "id": 2,
+        "name": "Olivia Lee",
+        "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg",
+        "expertise": "Social Media Strategy",
+        "designation": "CEO",
+        "company": "XYZ Social Agency"
+    },
+    {
+        "id": 3,
+        "name": "Daniel Wilson",
+        "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg",
+        "expertise": "SEO Optimization",
+        "designation": "CEO & Founder",
+        "company": "SearchRank Inc."
+    },
+    {
+        "id": 4,
+        "name": "Sophie Roberts",
+        "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg",
+        "expertise": "Content Creation",
+        "designation": "Content Manager",
+        "company": "Contentify Agency"
+    },
+    {
+        "id": 5,
+        "name": "Daniel Wilson",
+        "spk_img": "https://i.ibb.co/wKbstCp/speakers-4.jpg",
+        "expertise": "Social Media Marketing",
+        "designation": "Sales Manager",
+        "company": "SocialTrend Marketing"
+    },
+    {
+        "id": 6,
+        "name": "Sophie Roberts",
+        "spk_img": "https://i.ibb.co/Yc9mXH3/speakers-2.jpg",
+        "expertise": "Video Marketing",
+        "designation": "CTO",
+        "company": "VideoMagnet Studios"
+    },
+    {
+        "id": 7,
+        "name": "Olivia Lee",
+        "spk_img": "https://i.ibb.co/nwbfXmd/speakers-5.jpg",
+        "expertise": "Email Marketing",
+        "designation": "Manager",
+        "company": "MailReach Co."
+    },
+    {
+        "id": 8,
+        "name": "David Johnson",
+        "spk_img": "https://i.ibb.co/3pBtmrX/speakers-8.jpg",
+        "expertise": "Content Strategy",
+        "designation": "Manager",
+        "company": "ContentCraft Agency"
+    }
+]

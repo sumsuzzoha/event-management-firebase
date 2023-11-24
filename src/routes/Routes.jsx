@@ -9,6 +9,8 @@ import EventDetail from "../pages/Events/EventDetail";
 import PrivateRoute from "./PrivateRoutes";
 // import Enroled from "../pages/Enroled/Enroled";
 import BookedEvent from "../pages/BookedEvent/BookedEvent";
+import Sponsors from "../pages/Sponsors/Sponsors";
+import Speakers from "../pages/Speakers/Speakers";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +37,13 @@ const router = createBrowserRouter([
                 </PrivateRoute>,
                 loader:() => fetch('/event_data.json')
             },
+            {
+                path: '/speakers',
+                element: <PrivateRoute>
+                    <Speakers></Speakers>
+                </PrivateRoute>,
+                loader:() => fetch('/event_data.json')
+            },
             // {
             //     path: '/enroled/:id',
             //     element: <PrivateRoute>
@@ -45,6 +54,10 @@ const router = createBrowserRouter([
             {
                 path: '/about',
                 element: <About></About>
+            },
+            {
+                path: '/sponsors',
+                element: <Sponsors></Sponsors>
             },
             {
                 path: '/login',
