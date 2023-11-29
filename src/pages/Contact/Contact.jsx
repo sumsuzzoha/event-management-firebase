@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+import { FaFacebook, FaLinkedinIn, FaTwitter } from "react-icons/fa";
 import contact1Img from '../../assets/images/contact-sect.jpg'
 const Contact = () => {
     return (
@@ -14,16 +16,26 @@ const Contact = () => {
                                 </div>
                                 <p className="mr-6">Provident cupiditate voluptatem etin. Quaerat fugiat ut assumenda excepturi
                                     exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-                                <h1 className="text-2xl font-bold py-2">dEVENTS</h1>
+                                <h1 className="text-lg md:text-2xl font-bold py-2">eEVENTS</h1>
                             </div>
-                            <div className="flex flex-col w-full">
+                            <div className="flex flex-col w-full space-y-4">
                                 <div className="h-20 flex items-end pb-6">
                                     <h1 className="text-xl md:text-2xl font-bold ">Contact</h1>
                                 </div>
                                 <h3 className="text-lg ">021 Hollywood Boulevard, LA</h3>
                                 <h3 className="text-lg">customer@example.com</h3>
                                 <h3 className="text-lg">(021) 345-6789</h3>
-                                <p className="py-2">Icon</p>
+                                <div className="text-blue-600 flex items-center gap-4">
+                                    <div className=" avatar  text-3xl">
+                                        <Link><FaTwitter /></Link>
+                                    </div>
+                                    <div className=" avatar text-2xl">
+                                        <Link><FaFacebook /></Link>
+                                    </div>
+                                    <div className=" avatar text-3xl">
+                                        <Link><FaLinkedinIn /></Link>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -31,30 +43,10 @@ const Contact = () => {
             </div>
             <div className=" min-h-full w-full mx-auto py-4 md:py-10 bg-base-200">
                 <div className="flex flex-col w-full justify-between gap-4 w-10/12 mx-auto md:flex-row-reverse">
-                    <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100 ">
+                    <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-slate-700">
                         <form className="card-body">
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Email</span>
-                                </label>
-                                <input type="email" placeholder="email" className="input input-bordered" required />
-                            </div>
-                            <div className="form-control">
-                                <label className="label">
-                                    <span className="label-text">Password</span>
-                                </label>
-                                <input type="password" placeholder="password" className="input input-bordered" required />
-                                <label className="label">
-                                    <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-                                </label>
-                            </div>
-                            <div className="form-control mt-6">
-                                <button className="btn btn-primary">Login</button>
-                            </div>
-                        </form>
-                    </div>
-                    <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-teal-900">
-                        <form className="card-body">
+                            <h2 className='text-2xl font-bold text-white pt-2 '>Send Us Message</h2>
+                            <p className='text-white py-4'>Gravida vulputate aliquet tempor eque sed pretium non urna sed etid aenean haretra quam placerat.</p>
                             <div className="form-control">
                                 <input type="name" placeholder="Name" className="input input-bordered" required />
                             </div>
@@ -67,6 +59,13 @@ const Contact = () => {
                             </div>
                             <div className="form-control mt-6">
                                 <button className="btn btn-primary">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                    <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100 ">
+                        <form className="card-body min-h-max">
+                            <div className='h-48'>
+                                loading Maps...
                             </div>
                         </form>
                     </div>

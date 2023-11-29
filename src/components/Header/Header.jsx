@@ -10,7 +10,6 @@ const Header = () => {
             <div className="text-white flex items-center gap-4">
                 <div className=" avatar  text-3xl">
                     <Link><FaTwitter /></Link>
-
                 </div>
                 <div className=" avatar text-2xl">
                     <Link><FaFacebook /></Link>
