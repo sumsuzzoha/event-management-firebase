@@ -1,7 +1,8 @@
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../utilitis/AuthProvider";
-import { ToastContainer, toast } from 'react-toastify';
+import regBgImg from '../../assets/images/signupBg.jpg'
+// import { ToastContainer, toast } from 'react-toastify';
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
@@ -17,13 +18,34 @@ const Register = () => {
         // const userLogInName = form.get('name')
         const userRegEmail = form.get('email')
         const userRegPassword = form.get('password')
-        console.log(userRegEmail, userRegPassword)
+        const userAggreeTerms = form.get('terms')
+        // console.log(userRegEmail, userRegPassword)
+        setRegInputError('');
         setRegError('');
+        setSuccess('');
 
-        if (userRegPassword < 6) {
-            setRegInputError('Your Password should be minimum 6 charecter');
+        if (userRegPassword.length < 6) {
+            setRegInputError('Weak-password!! Password should be at least 6 characters');
             return;
         }
+        else if (!/[A-Z]/.test(userRegPassword)) {
+            setRegInputError('Enter at least one uppercase letter');
+            return;
+        }
+        else if (!/[0-9]/.test(userRegPassword)) {
+            setRegInputError('Enter at least one digit');
+            return;
+        }
+        else if (!/[@#^*.-]/.test(userRegPassword)) {
+            setRegInputError('Enter at least one of these @#^*.- characters ');
+            return;
+        }
+        else if (!userAggreeTerms) {
+            setRegInputError('Accept the Terms & Conditions');
+            return;
+        }
+
+
         createUser(userRegEmail, userRegPassword)
             .then(() => {
                 setSuccess('Account create Successfully')
@@ -32,17 +54,21 @@ const Register = () => {
             })
             .catch((error) => {
                 setRegError(error.message)
-                toast("Wow so easy!")
-                console.log(error.code)
+                // toast("Wow so easy!")
+                // console.log(error.code)
                 // const errorCode = error.code;
 
             })
     }
     return (
-        <div>
-            <div className="hero max-h-screen py-4 bg-base-200">
+        <div style={{
+            backgroundImage: `url(${regBgImg}`,
+            backgroundSize: 'cover',
+        }} className="py-4 px-2">
+            <div className="hero max-h-max py-4">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleRegisterForm} className="card-body">
+                        <h3 className="text-xl font-semibold text-primary text-center">Create a new account here</h3>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Name</span>
@@ -68,18 +94,20 @@ const Register = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <span><input type="checkbox" name="" id="2" /> Accept the Terms & Condition</span>
+                                <p><span><input type="checkbox" name="terms" id="2" /> Accept the Terms & Condition</span></p>
                             </label>
+                            <span className="text-sm link link-hover"><Link>See the terms & condition</Link></span>
                         </div>
                         <div>
                             {
-                                regInputError && <p className="text-green-400 text-lg font-semibold text-center">{regError}</p>
+                                regInputError && <p className="text-red-400 font-semibold text-center">{regInputError}</p>
                             }
                             {
-                                regError && <p className="text-green-400 text-lg font-semibold text-center">{regError}</p>
+                                regError && <p className="text-red-400  font-semibold text-center">{regError}</p>
                             }
                             {
-                                success && <p className="text-green-400 text-lg font-semibold text-center">{success}</p>
+                                success && <p className="text-green-400  font-semibold text-center">
+                                    <p>{success}</p><Link to='/'>Go to Home</Link></p>
                             }
                         </div>
                         <div className="form-control mt-6">
@@ -94,7 +122,7 @@ const Register = () => {
 
             </div>
 
-            <ToastContainer />
+            {/* <ToastContainer /> */}
         </div>
     );
 };

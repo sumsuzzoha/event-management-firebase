@@ -1,7 +1,8 @@
 import aboutImg2 from '../../assets/images/aboutImg2.png'
 const About = () => {
     return (
-        <div className='md:space-y-6 py-6'>
+        <div style={{ 
+            background: 'linear-gradient(to top right, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))' }} className='md:space-y-6 py-6'>
             <div className="grid md:grid-cols-2 md:gap-10 md:mx-20 " >
                 <div className=' grid content-center space-y-6 mt-6 mx-6 md:pr-6 '>
                     <h2 className='text-xl font-bold text-slate-400'>ABOUT DigiSESSION</h2>
@@ -28,7 +29,7 @@ const About = () => {
                     </div>
                 </div>
                 <div className='md:max-w-md md:ms-10 space-y-6'>
-                    <h4 className='text-xl font-bold text-slate-400	'>WHY CONSESSION</h4>
+                    <h4 className='text-xl font-bold text-slate-400	'>WHY DigiSESSION</h4>
                     <h2 className='text-5xl font-bold'>3 Main Reasons to Join</h2>
                     <p>Access global expertise, networking, and convenience—immerse in insights, innovation, and collaboration while maximizing flexibility and eliminating geographical constraints.</p>
                 </div>

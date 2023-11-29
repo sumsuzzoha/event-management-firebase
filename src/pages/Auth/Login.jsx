@@ -1,35 +1,62 @@
 import { useContext, useState } from "react";
-import { Link,  useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../utilitis/AuthProvider";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import loginBg from '../../assets/images/loginBg.jpg'
+
 const Login = () => {
-    const {signInUser, signInWithGoogle} =useContext(AuthContext);
+    const { signInUser, signInWithGoogle } = useContext(AuthContext);
+
     const [showpassword, setShowPassword] = useState(false);
-    const location =useLocation();
-    const navigate= useNavigate();
-    
+    // const [success, setSuccess] = useState('');
+    const [signInError, setSignInError] = useState();
+    // const [signInInputError, setSignInInputError] = useState();
+
+    const location = useLocation();
+    // console.log(location);
+    const navigate = useNavigate();
+
+    const notify = () => toast.error("Email or Password not valid. Try again..", {
+        position: toast.POSITION.TOP_CENTER
+    });
 
     const handleLogInForm = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
         const userLogInEmail = form.get('email')
         const userLogInPassword = form.get('password')
+        console.log(userLogInEmail, userLogInPassword)
+        setSignInError('')
+
         signInUser(userLogInEmail, userLogInPassword)
-        .then(
-            navigate(location?.state ? location.state : '/')
-        )
-        .catch()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+            }
+            )
+            .catch(error => {
+                notify();
+                setSignInError(error.message);
+                return;
+
+            })
     }
-    const handleGoogleSignIn = () =>{
+    const handleGoogleSignIn = () => {
         signInWithGoogle()
-        .then()
-        .catch()
+            .then()
+            .catch()
     }
     return (
-        <div>
+        <div style={{
+            backgroundImage: `url(${loginBg}`,
+            backgroundSize: 'cover',
+        }} className="py-4 px-2"
+        >
             <div className="min-h-max flex justify-center">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleLogInForm} className="card-body">
+                    <h3 className="text-xl font-semibold text-primary text-center">Login here</h3>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -47,10 +74,19 @@ const Login = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <a href="#" className=" link link-hover">Forgot password?</a>
+                                <Link to='/error' className=" link link-hover">Forgot password?</Link>
+                                {/* <a href="#" ></a> */}
                             </label>
                         </div>
-                        <div className="form-control mt-6">
+                        <div>
+                            <label className="label">
+                                {
+                                    signInError && <p className="text-red-400  font-semibold text-center">{signInError}</p>
+                                }
+
+                            </label>
+                        </div>
+                        <div className="form-control mt-2">
                             <input type="submit" value="Login" className="btn btn-primary" />
                         </div>
                     </form>
@@ -62,6 +98,7 @@ const Login = () => {
                 </div>
 
             </div>
+            <ToastContainer />
         </div>
     );
 };

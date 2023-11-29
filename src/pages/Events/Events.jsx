@@ -12,14 +12,19 @@ const Events = () => {
             .then(data => setAllEvents(data))
     }, [])
     return (
-        <div className="py-6">
+        <div
+        style={{
+            backgroundImage: `linear-gradient(-45deg, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))`,
+            backgroundSize: 'cover',
+        }}
+         className="md:py-14">
             <EventBanner></EventBanner>
             {
                 allEvents.map((event, idx) => <div
                     key={event.id}
                 >
                     <div className="flex justify-center md:mt-10">
-                        <div className=" stat flex w-full rounded-lg bg-white shadow-lg ">
+                        <div className=" md:mx-4 stat flex w-full rounded-lg bg-white shadow-lg ">
                             <div className="p-2 flex items-center">
                                 <div className="text-5xl font-bold ">0{idx + 1}</div>
                             </div>
@@ -31,7 +36,8 @@ const Events = () => {
                                 <div className="grid grid-cols-9 gap-4 items-center">
                                     <div className="my-4 col-span-4 grid grid-cols-2 items-center gap-6 ">
                                         <div className="">
-                                            <>{event?.date_and_time?.date}</><br></br><>{event?.date_and_time?.time}</>
+                                            <>{event?.date_and_time?.date}</><br></br><>{event?.date_and_time?.time}</> <br />
+                                            <p className="badge badge-accent">${event?.price}</p>
                                         </div>
                                         <div className=" ">
                                             <>{event?.location?.buildings}, </><>{event?.location?.city}</>

@@ -11,11 +11,16 @@ import PrivateRoute from "./PrivateRoutes";
 import BookedEvent from "../pages/BookedEvent/BookedEvent";
 import Sponsors from "../pages/Sponsors/Sponsors";
 import Speakers from "../pages/Speakers/Speakers";
+import Blogs from "../pages/Blogs/Blogs";
+import LetestBlog from "../pages/Blogs/LetestBlog";
+import Error from "../pages/Error/Error";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
         path: "/",
         element: <Root></Root>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
@@ -46,6 +51,14 @@ const router = createBrowserRouter([
                 </PrivateRoute>,
                 loader: () => fetch('/event_data.json')
             },
+            {
+                path: '/blog',
+                element: <Blogs></Blogs>
+            },
+            {
+                path: '/letestBlog',
+                element: <LetestBlog></LetestBlog>
+            },
             // {
             //     path: '/enroled/:id',
             //     element: <PrivateRoute>
@@ -68,6 +81,10 @@ const router = createBrowserRouter([
             {
                 path: '/register',
                 element: <Register></Register>
+            },
+            {
+                path: '/contact',
+                element: <Contact></Contact>
             }
         ]
     },

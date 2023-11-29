@@ -4,8 +4,14 @@
   font-family: 'Poppins', sans-serif;
   max-width: 1440px;
   margin: 0 auto;
-  padding: 0 10px;
-
+  padding:  2px;
+}
+a.active {
+  color:rgb(248, 9, 9);
+  font-size: larger;
+}
+li a:hover {
+  color:rgb(248, 9, 9);
 }
 
 @tailwind base;

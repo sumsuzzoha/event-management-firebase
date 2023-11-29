@@ -7,7 +7,7 @@ import { MdEmail } from "react-icons/md";
 
 const Footer = () => {
     return (
-        <div className=" ">
+        <div className="">
             <div className="bg-gray-800 md:py-10 text-white flex justify-around">
                 <div className="space-y-6">
                     <h4 className="text-xl font-bold">The Events Specialists!
@@ -15,7 +15,7 @@ const Footer = () => {
                     <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam, veniam?</p>
                 </div>
                 <div className="space-y-6">
-                    <h4 className="text-lg">Keep In Touch
+                    <h4 className="text-xl font-bold">Connect us
                     </h4>
                     <p className="flex items-center gap-3"><FaLandmark /> 38-2 Hilton Street, California, USA</p>
                     <p className="flex items-center gap-3"><FiPhoneIncoming />(+01) 123 456 7890</p>
