@@ -17,24 +17,24 @@ const Events = () => {
             backgroundImage: `linear-gradient(-45deg, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))`,
             backgroundSize: 'cover',
         }}
-         className="md:py-14">
+         className="py-6 md:py-14">
             <EventBanner></EventBanner>
             {
                 allEvents.map((event, idx) => <div
                     key={event.id}
                 >
-                    <div className="flex justify-center md:mt-10">
-                        <div className=" md:mx-4 stat flex w-full rounded-lg bg-white shadow-lg ">
+                    <div className="flex justify-center my-6 mx-2 md:mt-10">
+                        <div className=" md:mx-4 stat flex flex-col md:flex-row w-full rounded-lg bg-white shadow-lg ">
                             <div className="p-2 flex items-center">
-                                <div className="text-5xl font-bold ">0{idx + 1}</div>
+                                <div className="text-5xl mx-auto font-bold ">0{idx + 1}</div>
                             </div>
 
                             <div className="stat ">
-                                <div className="text-2xl ">
+                                <div className="text-2xl text-center">
                                     <h2 className="font-bold">{event?.name}</h2>
                                 </div>
-                                <div className="grid grid-cols-9 gap-4 items-center">
-                                    <div className="my-4 col-span-4 grid grid-cols-2 items-center gap-6 ">
+                                <div className="grid md:grid-cols-9 md:gap-4 items-center">
+                                    <div className="my-4 col-span-4 grid md:grid-cols-2 items-center gap-6 text-center md:text-start">
                                         <div className="">
                                             <>{event?.date_and_time?.date}</><br></br><>{event?.date_and_time?.time}</> <br />
                                             <p className="badge badge-accent">${event?.price}</p>
@@ -64,11 +64,11 @@ const Events = () => {
                                     </div>
                                 </div>
                             </div>
-                            <div className="stat-actions my-auto">
+                            <div className="stat-actions mx-auto my-auto">
                                 <Link
                                     to={`/event/${event.id}`}
                                 >
-                                    <button className="btn btn-xs sm:btn-sm md:btn-md lg:btn-lg  btn-info">See Details</button>
+                                    <button className="btn btn-sm md:btn-md lg:btn-lg  btn-info">See Details</button>
                                 </Link>
                             </div>
                         </div>

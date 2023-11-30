@@ -10,10 +10,10 @@ const About = () => {
                     <p>The bustling business seminar gathered industry leaders, fostering innovation and collaboration. Expert panels unveiled trends, strategies, and insights, igniting dialogue among participants. Networking thrived as minds converged, exchanging ideas that sparked newfound opportunities. It was a melting pot of visionaries, shaping the future of commerce in a dynamic, electrifying atmosphere.</p>
                     <button className='btn btn-primary w-max'>Read More</button>
                 </div>
-                <img className='max-h-fit rounded-xl' src={aboutImg2} alt="" />
+                <img className='w-11/12 mx-auto my-6 rounded-xl' src={aboutImg2} alt="" />
 
             </div>
-            <div className="grid md:grid-cols-2 md:gap-10 md:mx-20 md:pt-10">
+            <div className="grid md:grid-cols-2 md:gap-10 mx-6 md:mx-20 md:pt-10">
                 <div className='md:max-w-md space-y-3'>
                     <div>
                         <h4 className='text-2xl font-bold'>Easy Booking</h4>
@@ -35,7 +35,7 @@ const About = () => {
                 </div>
 
             </div>
-            <div className='flex justify-around bg-base-100 shadow-xl rounded mx-4 p-6'>
+            <div className='flex flex-col md:flex-row justify-around bg-base-100 shadow-xl rounded mx-4 my-6 p-6'>
                 <h2 className='text-3xl font-bold '>45K<span className='text-red-500'>+</span><span className='text-xl'>ATTENDEES</span></h2>
                 <h2 className='text-3xl font-bold '>25<span className='text-red-500'>+</span><span className='text-xl'>SPEAKERS</span></h2>
                 <h2 className='text-3xl font-bold '>50<span className='text-red-500'>+</span><span className='text-xl'>SESSIONS</span></h2>

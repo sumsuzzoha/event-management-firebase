@@ -8,7 +8,8 @@ const BookedEvent = () => {
     const enroledE = eventEnroled.find(event => event.id === idInt)
     const { name, date_and_time, event_img, location } = enroledE;
     return (
-        <div className="flex justify-center">
+        <div style={{ background: 'linear-gradient(to bottom right, #4951f2 40%, #b81f5c 60%)' }}
+         className="flex justify-center py-4 md:py-10">
             <div className="card w-96 bg-base-100 shadow-xl image-full">
                 <figure><img src={event_img} alt="Shoes" /></figure>
                 <div className="card-body flex flex-col justify-between">

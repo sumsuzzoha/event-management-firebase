@@ -16,7 +16,6 @@ import LetestBlog from "../pages/Blogs/LetestBlog";
 import Error from "../pages/Error/Error";
 import Contact from "../pages/Contact/Contact";
 import ConstrucPages from "../pages/ConstructionPages/ConstrucPages";
-import Regi from "../pages/Auth/regi";
 import ProtectedRoutes from "./ProtectedRoutes";
 
 const router = createBrowserRouter([
@@ -97,10 +96,7 @@ const router = createBrowserRouter([
                 path: '/undcons',
                 element: <ConstrucPages></ConstrucPages>
             },
-            {
-                path: '/regi',
-                element: <Regi></Regi>
-            }
+
         ]
     },
 ]);
