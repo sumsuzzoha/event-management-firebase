@@ -2,7 +2,7 @@ import PropTypes from 'prop-types';
 import { useContext } from 'react';
 
 
-import { Navigate, useLocation } from 'react-router-dom';
+import {  Navigate, useLocation } from 'react-router-dom';
 import { AuthContext } from '../utilitis/AuthProvider';
 
 const PrivateRoute = ({ children }) => {

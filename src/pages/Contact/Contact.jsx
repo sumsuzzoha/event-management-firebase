@@ -8,7 +8,7 @@ const Contact = () => {
                 <div className="flex flex-col items-center w-10/12 mx-auto lg:flex-row-reverse">
                     <img src={contact1Img} className="max-w-sm rounded-lg shadow-2xl" />
                     <div className='flex flex-col gap-auto items-stretch'>
-                        <h3 className="font-bold pt-10 text-slate-500 ">CONTACT US</h3>
+                        <h3 className="text-lg font-bold pt-10 text-slate-500 ">CONTACT US</h3>
                         <div className="flex flex-col items-stretch md:flex-row w-full ">
                             <div className="w-full">
                                 <div className="h-20 flex items-end pb-6">
@@ -18,13 +18,13 @@ const Contact = () => {
                                     exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
                                 <h1 className="text-lg md:text-2xl font-bold py-2">eEVENTS</h1>
                             </div>
-                            <div className="flex flex-col w-full space-y-4">
+                            <div className="flex flex-col w-full">
                                 <div className="h-20 flex items-end pb-6">
                                     <h1 className="text-xl md:text-2xl font-bold ">Contact</h1>
                                 </div>
-                                <h3 className="text-lg ">021 Hollywood Boulevard, LA</h3>
-                                <h3 className="text-lg">customer@example.com</h3>
-                                <h3 className="text-lg">(021) 345-6789</h3>
+                                <h3 className="text-lg">021 Hollywood Boulevard, LA</h3>
+                                <h3 className="text-lg p-2">customer@example.com</h3>
+                                <h3 className="text-lg p-2">(021) 345-6789</h3>
                                 <div className="text-blue-600 flex items-center gap-4">
                                     <div className=" avatar  text-3xl">
                                         <Link><FaTwitter /></Link>
@@ -65,7 +65,7 @@ const Contact = () => {
                     <div className="card shrink-0 w-full max-w-xl shadow-2xl bg-base-100 ">
                         <form className="card-body min-h-max">
                             <div className='h-48'>
-                                loading Maps...
+                                 Maps loading...
                             </div>
                         </form>
                     </div>

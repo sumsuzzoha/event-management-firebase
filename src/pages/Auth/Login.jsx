@@ -1,9 +1,10 @@
 import { useContext, useState } from "react";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../utilitis/AuthProvider";
-
-import { ToastContainer, toast } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { FcGoogle } from "react-icons/fc";
+
 import loginBg from '../../assets/images/loginBg.jpg'
 
 const Login = () => {
@@ -11,16 +12,16 @@ const Login = () => {
 
     const [showpassword, setShowPassword] = useState(false);
     // const [success, setSuccess] = useState('');
-    const [signInError, setSignInError] = useState();
+    // const [signInError, setSignInError] = useState();
     // const [signInInputError, setSignInInputError] = useState();
 
     const location = useLocation();
     // console.log(location);
     const navigate = useNavigate();
 
-    const notify = () => toast.error("Email or Password not valid. Try again..", {
-        position: toast.POSITION.TOP_CENTER
-    });
+    // const notify = () => toast.error("Email or Password not valid. Try again..", {
+    //     position: toast.POSITION.TOP_CENTER
+    // });
 
     const handleLogInForm = e => {
         e.preventDefault();
@@ -28,7 +29,7 @@ const Login = () => {
         const userLogInEmail = form.get('email')
         const userLogInPassword = form.get('password')
         console.log(userLogInEmail, userLogInPassword)
-        setSignInError('')
+        // setSignInError('')
 
         signInUser(userLogInEmail, userLogInPassword)
             .then(() => {
@@ -36,16 +37,33 @@ const Login = () => {
             }
             )
             .catch(error => {
-                notify();
-                setSignInError(error.message);
+                // const errorCode = error.code;
+                if (error.code === "auth/invalid-login-credentials") {
+                    toast.error('email or password is not valid. Try again..');
+                    return;
+
+                }
+                toast.error(error.code);
                 return;
 
             })
     }
     const handleGoogleSignIn = () => {
         signInWithGoogle()
-            .then()
-            .catch()
+            .then(() => {
+                navigate(location?.state ? location.state : '/')
+            })
+            .catch(error => {
+                // const errorCode = error.code;
+                if (error.code === "auth/invalid-login-credentials") {
+                    toast.error('email or password is not valid. Try again..');
+                    return;
+
+                }
+                toast.error(error.code);
+                return;
+
+            })
     }
     return (
         <div style={{
@@ -56,7 +74,7 @@ const Login = () => {
             <div className="min-h-max flex justify-center">
                 <div className="card shrink-0 w-full max-w-lg shadow-2xl bg-base-100">
                     <form onSubmit={handleLogInForm} className="card-body">
-                    <h3 className="text-xl font-semibold text-primary text-center">Login here</h3>
+                        <h3 className="text-xl font-semibold text-primary text-center">Login here</h3>
                         <div className="form-control">
                             <label className="label">
                                 <span className="label-text">Email</span>
@@ -75,30 +93,24 @@ const Login = () => {
                         <div>
                             <label className="label">
                                 <Link to='/error' className=" link link-hover">Forgot password?</Link>
-                                {/* <a href="#" ></a> */}
-                            </label>
-                        </div>
-                        <div>
-                            <label className="label">
-                                {
-                                    signInError && <p className="text-red-400  font-semibold text-center">{signInError}</p>
-                                }
-
                             </label>
                         </div>
                         <div className="form-control mt-2">
-                            <input type="submit" value="Login" className="btn btn-primary" />
+                            <input type="submit" value="Login" className="btn btn-primary text-lg" />
                         </div>
+                        <p >Do not have account? <span className="btn-link  "><Link to='/register'>Resister Here</Link></span></p>
+                        <div className="divider">OR</div>
+                        <button onClick={handleGoogleSignIn}
+                            className="btn btn-outline btn-xs sm:btn-sm md:btn-md ">
+                            <span className="text-lg flex items-center">
+                                <FcGoogle />
+                                <span className="ms-4">Login with Google</span>
+                            </span>
+                        </button>
                     </form>
-                    <div className="text-center space-y-4 mb-6 ">
-                        <p >Do not have account? <span className="btn-link  "><Link to='/register'>Resister Here</Link></span>
-                        </p>
-                        <p >Login with <button onClick={handleGoogleSignIn} className="btn-link">Google</button></p>
-                    </div>
                 </div>
 
             </div>
-            <ToastContainer />
         </div>
     );
 };

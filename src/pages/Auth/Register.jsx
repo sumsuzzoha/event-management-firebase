@@ -2,64 +2,55 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../utilitis/AuthProvider";
 import regBgImg from '../../assets/images/signupBg.jpg'
-// import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+import { toast } from "react-toastify";
 
 const Register = () => {
     const { createUser } = useContext(AuthContext)
-
-    const [regInputError, setRegInputError] = useState();
     const [regError, setRegError] = useState();
     const [success, setSuccess] = useState('');
     const [showpassword, setShowPassword] = useState(false);
 
+
+
+
     const handleRegisterForm = e => {
         e.preventDefault();
         const form = new FormData(e.currentTarget);
-        // const userLogInName = form.get('name')
         const userRegEmail = form.get('email')
         const userRegPassword = form.get('password')
-        const userAggreeTerms = form.get('terms')
-        // console.log(userRegEmail, userRegPassword)
-        setRegInputError('');
         setRegError('');
         setSuccess('');
 
+
         if (userRegPassword.length < 6) {
-            setRegInputError('Weak-password!! Password should be at least 6 characters');
+            toast.warn('Weak-password!! Password should be at least 6 or more characters');
             return;
         }
         else if (!/[A-Z]/.test(userRegPassword)) {
-            setRegInputError('Enter at least one uppercase letter');
+            toast.warn("Enter at least one capital letter");
             return;
         }
         else if (!/[0-9]/.test(userRegPassword)) {
-            setRegInputError('Enter at least one digit');
+            toast.warn("Enter at least one digit");
             return;
         }
         else if (!/[@#^*.-]/.test(userRegPassword)) {
-            setRegInputError('Enter at least one of these @#^*.- characters ');
+            toast.warn("Enter at least one special characters. Ex: @#^*.-");
             return;
         }
-        else if (!userAggreeTerms) {
-            setRegInputError('Accept the Terms & Conditions');
-            return;
-        }
-
 
         createUser(userRegEmail, userRegPassword)
             .then(() => {
-                setSuccess('Account create Successfully')
-                // console.log(result)
-                // const user = userCredential.user;
+                setSuccess('Your account create successfully');
             })
             .catch((error) => {
-                setRegError(error.message)
-                // toast("Wow so easy!")
-                // console.log(error.code)
-                // const errorCode = error.code;
-
+                setRegError(error.code)
             })
+
     }
+
+
     return (
         <div style={{
             backgroundImage: `url(${regBgImg}`,
@@ -94,35 +85,38 @@ const Register = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <p><span><input type="checkbox" name="terms" id="2" /> Accept the Terms & Condition</span></p>
+                                <p><span><input type="checkbox" name="terms" id="2" required /> Accept the Terms & Condition</span></p>
                             </label>
-                            <span className="text-sm link link-hover"><Link>See the terms & condition</Link></span>
+                            <span className="text-sm link link-hover"><Link to='/undcons'>See the terms & condition</Link></span>
                         </div>
-                        <div>
-                            {
-                                regInputError && <p className="text-red-400 font-semibold text-center">{regInputError}</p>
-                            }
-                            {
-                                regError && <p className="text-red-400  font-semibold text-center">{regError}</p>
-                            }
-                            {
-                                success && <p className="text-green-400  font-semibold text-center">
-                                    <p>{success}</p><Link to='/'>Go to Home</Link></p>
-                            }
+                        {success && <div>
+                            <label className="label">
+                                <p className="text-green-600 font-semibold texl-lg text-center bg-emerald-200 rounded-lg py-2">{success}
+                                <br /><Link to='/' className="btn-link">Go Home</Link></p>
+
+                            </label>
                         </div>
-                        <div className="form-control mt-6">
+                        }
+                        {regError && <div>
+                            <label className="label">
+                                <p className="text-red-500 text-center bg-yellow-100 rounded-lg py-2">{regError}</p>
+                            </label>
+                        </div>
+                        }
+
+                        <div
+                            className="form-control mt-6">
                             <input type="submit" value="Register" className="btn btn-primary" />
                         </div>
+
                     </form>
                     <div className="text-center space-y-4 mb-6 ">
-                        <p>Go to <span className="btn-link"><Link to='/login'>Login Page</Link></span>
+                        <p>Already have an account? <span className="btn-link font-semibold texl-lg"><Link to='/login'>Login</Link></span>
                         </p>
                     </div>
                 </div>
 
             </div>
-
-            {/* <ToastContainer /> */}
         </div>
     );
 };
