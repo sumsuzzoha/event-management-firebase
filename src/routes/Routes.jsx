@@ -12,11 +12,13 @@ import BookedEvent from "../pages/BookedEvent/BookedEvent";
 import Sponsors from "../pages/Sponsors/Sponsors";
 import Speakers from "../pages/Speakers/Speakers";
 import Blogs from "../pages/Blogs/Blogs";
-import LetestBlog from "../pages/Blogs/LetestBlog";
+import LatestBlog from "../pages/BlogesLatest/LatestBlog";
 import Error from "../pages/Error/Error";
 import Contact from "../pages/Contact/Contact";
 import ConstrucPages from "../pages/ConstructionPages/ConstrucPages";
 import ProtectedRoutes from "./ProtectedRoutes";
+import SpeakerDetails from "../pages/Speakers/SpeakerDetails";
+import BlogDetails from "../pages/Blogs/BlogDetails";
 
 const router = createBrowserRouter([
     {
@@ -48,26 +50,29 @@ const router = createBrowserRouter([
             },
             {
                 path: '/speakers',
-                element: <PrivateRoute>
-                    <Speakers></Speakers>
-                </PrivateRoute>,
-                loader: () => fetch('/event_data.json')
+                element: <Speakers></Speakers>
+
+            },
+            {
+                path: '/speaker/:id',
+                element: <SpeakerDetails></SpeakerDetails>,
+                loader: () => fetch('/speakers.json')
             },
             {
                 path: '/blog',
                 element: <Blogs></Blogs>
             },
             {
-                path: '/letestBlog',
-                element: <LetestBlog></LetestBlog>
+                path: '/blog/:id',
+                element: <PrivateRoute>
+                    <BlogDetails></BlogDetails>
+                </PrivateRoute>,
+                loader: () => fetch('./blogs.json')
             },
-            // {
-            //     path: '/enroled/:id',
-            //     element: <PrivateRoute>
-            //         <Enroled></Enroled>
-            //     </PrivateRoute>,
-            //     loader:() => fetch('/event_data.json')
-            // },
+            {
+                path: '/letestBlog',
+                element: <LatestBlog></LatestBlog>
+            },
             {
                 path: '/about',
                 element: <About></About>

@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import LatestBlogBanner from "./LatestBlogBanner";
 
-const LetestBlog = () => {
+const LatestBlog = () => {
     const [latestBlog, setLatestBlog] = useState([]);
 
     useEffect(() => {
@@ -13,19 +15,20 @@ const LetestBlog = () => {
             })
 
     }, [])
-    console.log(latestBlog);
 
     return (
-        <div>
-            <div className="hero min-h-screen bg-base-200">
-                <div className="hero-content flex-col lg:flex-row gap-6">
-                    <div className="card w-full max-w-xl shadow-2xl bg-base-100">
+        <div className="mx-2 mb-4 md:mb-14">
+            <LatestBlogBanner></LatestBlogBanner>
+            <div className="hero ">
+                <div className="hero-content flex-col lg:flex-row gap-6 bg-indigo-300 rounded-xl">
+                    <div className="card w-full max-w-xl shadow-2xl">
                         <img className="rounded-xl" src={latestBlog?.img} alt="image" />
                     </div>
-                    <div className="text-center max-w-xl md:text-left">
+                    <div className="text-center text-white max-w-xl md:text-left">
                         <h1 className="text-3xl font-bold">{latestBlog?.title}</h1>
                         <p className="pt-6">{latestBlog?.content?.intro}</p>
-                        <p className="text-blue-600">Read More..</p>
+                        <Link to={`/blog/${latestBlog.id}`} className="text-blue-600 font-bold">Read More.. </Link>
+                        <p ></p>
                     </div>
 
                 </div>
@@ -34,4 +37,4 @@ const LetestBlog = () => {
     );
 };
 
-export default LetestBlog;
+export default LatestBlog;

@@ -92,7 +92,7 @@ const Login = () => {
                         </div>
                         <div>
                             <label className="label">
-                                <Link to='/error' className=" link link-hover">Forgot password?</Link>
+                                <Link to='/undcons' className=" link link-hover">Forgot password?</Link>
                             </label>
                         </div>
                         <div className="form-control mt-2">

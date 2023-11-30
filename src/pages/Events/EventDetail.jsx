@@ -7,7 +7,7 @@ const EventDetail = () => {
     // console.log(typeof idInt);
     const eventDetail = useLoaderData();
     const event = eventDetail.find(event => event.id === idInt)
-    console.log(event);
+    // console.log(event);
     // const
 
     return (
