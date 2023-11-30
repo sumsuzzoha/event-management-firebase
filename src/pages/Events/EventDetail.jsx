@@ -4,11 +4,8 @@ import { Link, useLoaderData, useParams } from "react-router-dom";
 const EventDetail = () => {
     const { id } = useParams();
     const idInt = parseInt(id);
-    // console.log(typeof idInt);
     const eventDetail = useLoaderData();
     const event = eventDetail.find(event => event.id === idInt)
-    // console.log(event);
-    // const
 
     return (
         <div className="bg-gray-200">

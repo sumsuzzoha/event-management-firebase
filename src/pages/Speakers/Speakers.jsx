@@ -10,7 +10,6 @@ const Speakers = () => {
             .then(res => res.json())
             .then(data => setAllSpeakers(data))
     }, [])
-    // console.log(allSpeakers.length)
 
     return (
         <div className="py-6 bg-gray-300">
@@ -24,7 +23,7 @@ const Speakers = () => {
                     {
                         allSpeakers.map(speakers =>
                             <Link key={speakers.id}
-                            to={`/speaker/${speakers.id}`}
+                                to={`/speaker/${speakers.id}`}
                             >
                                 <div className="card">
                                     <figure className="px-10 pt-10">

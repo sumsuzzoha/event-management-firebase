@@ -7,7 +7,6 @@ import Register from "../pages/Auth/Register";
 import About from "../pages/About/About";
 import EventDetail from "../pages/Events/EventDetail";
 import PrivateRoute from "./PrivateRoutes";
-// import Enroled from "../pages/Enroled/Enroled";
 import BookedEvent from "../pages/BookedEvent/BookedEvent";
 import Sponsors from "../pages/Sponsors/Sponsors";
 import Speakers from "../pages/Speakers/Speakers";

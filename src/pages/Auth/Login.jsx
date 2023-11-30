@@ -11,17 +11,8 @@ const Login = () => {
     const { signInUser, signInWithGoogle } = useContext(AuthContext);
 
     const [showpassword, setShowPassword] = useState(false);
-    // const [success, setSuccess] = useState('');
-    // const [signInError, setSignInError] = useState();
-    // const [signInInputError, setSignInInputError] = useState();
-
     const location = useLocation();
-    // console.log(location);
     const navigate = useNavigate();
-
-    // const notify = () => toast.error("Email or Password not valid. Try again..", {
-    //     position: toast.POSITION.TOP_CENTER
-    // });
 
     const handleLogInForm = e => {
         e.preventDefault();
@@ -29,7 +20,6 @@ const Login = () => {
         const userLogInEmail = form.get('email')
         const userLogInPassword = form.get('password')
         console.log(userLogInEmail, userLogInPassword)
-        // setSignInError('')
 
         signInUser(userLogInEmail, userLogInPassword)
             .then(() => {
@@ -37,7 +27,6 @@ const Login = () => {
             }
             )
             .catch(error => {
-                // const errorCode = error.code;
                 if (error.code === "auth/invalid-login-credentials") {
                     toast.error('email or password is not valid. Try again..');
                     return;
@@ -54,7 +43,6 @@ const Login = () => {
                 navigate(location?.state ? location.state : '/')
             })
             .catch(error => {
-                // const errorCode = error.code;
                 if (error.code === "auth/invalid-login-credentials") {
                     toast.error('email or password is not valid. Try again..');
                     return;

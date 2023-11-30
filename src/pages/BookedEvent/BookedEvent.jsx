@@ -3,7 +3,6 @@ import { useLoaderData, useParams } from "react-router-dom";
 const BookedEvent = () => {
     const { id } = useParams();
     const idInt = parseInt(id);
-    // console.log(typeof idInt);
     const eventEnroled = useLoaderData();
     const enroledE = eventEnroled.find(event => event.id === idInt)
     const { name, date_and_time, event_img, location } = enroledE;
