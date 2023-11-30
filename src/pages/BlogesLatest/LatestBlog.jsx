@@ -19,7 +19,9 @@ const LatestBlog = () => {
     return (
         <div className="mx-2 mb-4 md:mb-14">
             <LatestBlogBanner></LatestBlogBanner>
-            <div className="hero ">
+            <div className="hero "
+            data-aos="fade-up"
+            data-aos-duration="3000">
                 <div className="hero-content flex-col lg:flex-row gap-6 bg-indigo-300 rounded-xl">
                     <div className="card w-full max-w-xl shadow-2xl">
                         <img className="rounded-xl" src={latestBlog?.img} alt="image" />

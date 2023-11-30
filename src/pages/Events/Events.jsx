@@ -1,6 +1,7 @@
-import {  useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import EventBanner from "./EventBanner";
+
 
 const Events = () => {
     const [allEvents, setAllEvents] = useState([]);
@@ -13,15 +14,17 @@ const Events = () => {
     }, [])
     return (
         <div
-        style={{
-            backgroundImage: `linear-gradient(-45deg, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))`,
-            backgroundSize: 'cover',
-        }}
-         className="py-6 md:py-14">
+            style={{
+                backgroundImage: `linear-gradient(-45deg, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))`,
+                backgroundSize: 'cover',
+            }}
+            className="py-6 md:py-14">
             <EventBanner></EventBanner>
             {
                 allEvents.map((event, idx) => <div
                     key={event.id}
+                    data-aos="fade-up"
+                    data-aos-duration="2000"
                 >
                     <div className="flex justify-center my-6 mx-2 md:mt-10">
                         <div className=" md:mx-4 stat flex flex-col md:flex-row w-full rounded-lg bg-white shadow-lg ">

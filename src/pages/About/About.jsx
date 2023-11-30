@@ -1,16 +1,21 @@
 import aboutImg2 from '../../assets/images/aboutImg2.png'
 const About = () => {
     return (
-        <div style={{ 
-            background: 'linear-gradient(to top right, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))' }} className='md:space-y-6 py-6'>
+        <div style={{
+            background: 'linear-gradient(to top right, rgba(255, 51, 102, 0.8), rgba(255, 153, 51, 0.5))'
+        }} className='md:space-y-6 py-6'>
             <div className="grid md:grid-cols-2 md:gap-10 md:mx-20 " >
-                <div className=' grid content-center space-y-6 mt-6 mx-6 md:pr-6 '>
+                <div
+                    data-aos="zoom-in-right"
+                    className=' grid content-center space-y-6 mt-6 mx-6 md:pr-6 '>
                     <h2 className='text-xl font-bold text-slate-200'>ABOUT DigiSESSION</h2>
                     <h2 className='text-5xl font-bold '>Welcome to DigiSESSION Conference</h2>
                     <p>The bustling business seminar gathered industry leaders, fostering innovation and collaboration. Expert panels unveiled trends, strategies, and insights, igniting dialogue among participants. Networking thrived as minds converged, exchanging ideas that sparked newfound opportunities. It was a melting pot of visionaries, shaping the future of commerce in a dynamic, electrifying atmosphere.</p>
                     <button className='btn btn-primary w-max'>Read More</button>
                 </div>
-                <img className='w-11/12 mx-auto my-6 rounded-xl' src={aboutImg2} alt="" />
+                <img
+                    data-aos="zoom-in-left"
+                    className='w-11/12 mx-auto my-6 rounded-xl' src={aboutImg2} alt="" />
 
             </div>
             <div className="grid md:grid-cols-2 md:gap-10 mx-6 md:mx-20 md:pt-10">

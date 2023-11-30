@@ -19,7 +19,9 @@ const Blogs = () => {
             <BlogsBanner></BlogsBanner>
             <div className="bg- grid grid-col-1 md:grid-cols-3 gap-4 md:p-6">
                 {blogs.map(blog => 
-                <Link key={blog.id} to={`/blog/${blog.id}`}>
+                <Link key={blog.id} to={`/blog/${blog.id}`}
+                data-aos="zoom-in-up"
+                data-aos-duration="1000">
                 <div  className="card w-full h-full">
                     <div>
                         <figure className="p-2">

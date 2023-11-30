@@ -4,8 +4,17 @@ import Header from "../components/Header/Header";
 import Footer from "../components/Footer/Footer";
 import bannerImg from '../assets/images/banner2.jpg'
 import { ToastContainer } from "react-toastify";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
+import { useEffect } from "react";
+
+
 
 const Root = () => {
+    useEffect(() => {
+        AOS.init();
+    }, [])
+
     return (
         <div className="">
             <div
