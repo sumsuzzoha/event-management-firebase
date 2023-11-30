@@ -1,8 +1,8 @@
 - **Question 1**
 
-- let greeting;
-- greetign = {};
-- console.log(greetign);
+let greeting;\
+greetign = {};\
+console.log(greetign);
 
 - A: {}
 - B: ReferenceError: greetign is not defined
