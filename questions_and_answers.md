@@ -12,7 +12,7 @@ console.log(greetign);\
  Cause: This code will log an empty object {} to the console. because the variable greeting declared and assigned an empty object.\
 
 
-- **Question 2**
+- **Question 2**\
 
  function sum(a, b) {\
     return a + b;\
@@ -28,7 +28,7 @@ console.log(greetign);\
  Cause: If input give a string and a number JavaScript concatenates them. As the string "2" with the string representation of the number 1.\
 
 
-- **Question 4**
+- **Question 4**\
  const food = ["🍕", "🍫", "🥑", "🍔"];\
  const info = { favoriteFood: food[0] };\
 
@@ -44,7 +44,7 @@ console.log(greetign);\
  Cause: An array food is declared and initialized with four food. The value of info > favoriteFood is reassigned to "🍝". \
  The reason why changing the info.favoriteFood property doesn't affect the original food array is because of how JavaScript handles primitive values and object references.\
 
-- **Question 4**
+- **Question 4**\
  function sayHi(name) {\
    return `Hi there, ${name}`;\
  }\
@@ -59,7 +59,7 @@ console.log(greetign);\
  Cause: The sayHi() function call results in "Hi there, undefined" because the name parameter inside the function is not provided with a value.\
 
 
-- **Question 5**
+- **Question 5**\
  let count = 0;\
  const nums = [0, 1, 2, 3];\
 
