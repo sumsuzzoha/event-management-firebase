@@ -1,6 +1,8 @@
 # Digital Events & Seminars Website
 
-Welcome to the Digital Events & Seminars website! This platform is designed to host and manage various digital events, seminars, and conferences. Below are the key features offered by this platform:
+Welcome to the Digital Events & Seminars website! This platform is designed to host and manage various digital events, seminars, and conferences. Below are the key features offered by this platform
+
+Livesite Link: https://digi-session-event.web.app/
 
 ## Features
 
